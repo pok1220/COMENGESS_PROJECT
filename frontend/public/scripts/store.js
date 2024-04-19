@@ -10,6 +10,12 @@ document.getElementById('heart').onclick = addHeart;
 document.getElementById('Skin-01').onclick = ()=>{
   selectSkin('Skin-01')
 }
+document.getElementById('Skin-02').onclick = ()=>{
+  selectSkin('Skin-02')
+}
+document.getElementById('Skin-03').onclick = ()=>{
+  selectSkin('Skin-03')
+}
 async function afterFetch(){
   const player = await apiController.getCurrentPlayer();
   document.getElementById('money').innerHTML = player[0].balance;
@@ -31,7 +37,7 @@ async function addHeart() {
     current_extra_heart+=1
     current_balance-=3;
     await apiController.changeBalance(current_balance);
-    afterFetch();
+    await afterFetch();
   }
   else{console.log("Not have")}
 
@@ -57,18 +63,18 @@ async function selectSkin(id_skin) {
 
       //current_PlayerSkinNow=document.getElementById(id_skin) สั้งในหน้า start game????????? 
       // current_PlayerSkinNow=id_skin
-      apiController.selectSkin(id_skin);
+      await apiController.selectSkin(id_skin);
 
   }else{
     if(current_balance>5){
       // current_PlayerSkin_All.push(id_skin)
       current_balance-=5
-      apiController.addSkin(id_skin);
-      apiController.changeBalance(current_balance);
-      apiController.selectSkin(id_skin)
+      await apiController.addSkin(id_skin);
+      await apiController.changeBalance(current_balance);
+      await apiController.selectSkin(id_skin)
      }
   }
-  afterFetch();
+  await afterFetch();
   // curS.innerHTML = player[0].selectedSkin;
 
   // const payload = { //ไม่แน่ใจว่าจะทำยังไง คิดว่าไม่จำเป็นแค่ส่งค่าไปแก้พอ

@@ -76,7 +76,8 @@ StartButton.addEventListener("click", function(){
 
 async function reAc(){
     playerName = window.prompt("Your Name")
-    if(playerName == "") playerName = "Anonymous"
+    if(playerName == '' || playerName == null) playerName = "Anonymous"
+    // alert(playerName)
     console.log(playerName)
     document.getElementById('nameChange').innerHTML = playerName
     apiController.startGame(playerName)
