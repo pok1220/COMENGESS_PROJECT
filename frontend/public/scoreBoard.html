@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="scoreBoard.css" />
+  </head>
+
+  <body>
+    <section>
+      <header><h1 id="app-name">Scoreboard</h1></header>
+    </section>
+
+    <section>
+      <header>
+        
+      </header>
+      <ul id="member-list">
+        <!-- To be populated by JS -->
+      </ul>
+    </section>
+
+    <section>
+      <table id="main-table">
+        <thead>
+          <tr>
+            <th>Ranking</th>
+            <th>Player Name</th>
+            <th>Score</th>
+            <th>TimeRecording</th>
+          </tr>
+          <tbody id="main-table-body"></tbody>
+      </table>
+      <button id="changePage" class="back">Back</button>
+    </section>
+
+    <script type="module" src="./scripts/scoreBoard.js"></script>
+  </body>
+</html>

@@ -366,6 +366,7 @@ export async function snake(){
                     game.destroy(true);
                     snake();
                     apiControllor.endGame(coins, score);
+                    apiControllor.changeExtraHealthInGame(life);
                     coins = 0;
                 });
                 let returnButton = this.add.text(300, 350, 'Return', { fontFamily: 'Arial', fontSize: 20, color: '#ff0000' })
