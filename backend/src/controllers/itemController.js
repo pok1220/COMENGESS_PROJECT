@@ -79,6 +79,12 @@ export const changeExtraHealth = async (req, res) => {
   res.send(await scoreboard.find({isPlay : true}));
 }
 
+export const changeExtraHealthInGame = async (req, res) => {
+  const {extraHealth} = req.query;
+  await scoreboard.updateOne({isPlay : true}, {extraHealth : parseInt(extraHealth)})
+  res.send(await scoreboard.find({isPlay : true}));
+}
+
 export const getCurrentPlayer = async (req, res) => {
   const player = await scoreboard.find({isPlay : true})
   res.send(player);

@@ -9,6 +9,7 @@ filterRouter.get("/clear", itemController.clearScoreboard);
 filterRouter.get("/start", itemController.startGame);
 filterRouter.get("/end", itemController.endGame);
 filterRouter.get("/updateHealth", itemController.changeExtraHealth)
+filterRouter.get("/changeInGame", itemController.changeExtraHealthInGame);
 filterRouter.get("/addSkin", itemController.addSkin)
 filterRouter.get("/current", itemController.getCurrentPlayer);
 filterRouter.get("/changeBalance", itemController.changeBalance)

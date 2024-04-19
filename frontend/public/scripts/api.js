@@ -33,6 +33,9 @@ export async function changeExtraHealth(isAdd){
   }
 }
 
+export async function changeExtraHealthInGame(extraHealth){
+  await fetch(`${BACKEND_URL}/filter/changeInGame?extraHealth=${extraHealth})`)
+}
 //want to get Array use .skinCollection
 export async function addSkin(skinId){
   if(skinId == "") return;
