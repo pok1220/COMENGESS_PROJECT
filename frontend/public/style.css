@@ -3,7 +3,12 @@
 body {
   font-family: "Mitr", sans-serif;
 }
-
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 60px;
+  font-size: 18px;
+}
 #app-name {
   font-size: 2em;
   font-weight: bold;
@@ -44,9 +49,12 @@ section {
   width: 100%;
   background: #eee;
   border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
   border-collapse: collapse;
   overflow: hidden;
+  text-align: center;
 }
 
 #main-table > thead {
@@ -59,56 +67,15 @@ section {
   text-align: left;
 }
 
+#main-table tr,
 #main-table td,
 #main-table th {
-  padding: 5px 10px;
+  
+  padding: 45px 5px;
   font-weight: lighter;
 }
 
-#main-table input,
-#main-table select,
-#filter-name,
-#lower-price,
-#upper-price,
-#member-name-to-add {
-  padding: 5px 10px;
-  border-radius: 8px;
-  border: 1px solid #aaa;
-}
 
-
-#main-table button,
-#add-member,
-#member-list button {
-  border-radius: 8px;
-  padding: 5px 10px;
-  border: 1px solid #aaa;
-  background: white;
-  width: 60px;
-  cursor: pointer;
-}
-
-#main-table button:hover,
-#add-member:hover,
-#member-list button:hover {
-  background: rgb(255, 200, 105);
-  color: white;
-}
-
-#filter-button {
-  color: black;
-  border-radius: 8px;
-  padding: 5px 10px;
-  border: 1px solid #aaa;
-  background: white;
-  width: 60px;
-  cursor: pointer;
-}
-
-#filter-button:hover {
-  color: white;
-  animation: filtering 10s infinite linear;
-}
 
 @keyframes filtering {
   0% {
@@ -146,4 +113,53 @@ section {
   100% {
     background: #ff0000;
   }
+}
+
+
+
+
+
+
+
+
+.picture01{
+  display: block;
+  /* margin-left: auto; */
+  width: 5%;
+  height: 10%;
+  position: absolute;
+}
+
+.back{
+  display: block;
+  /* margin-left: auto; */
+  width: 5%;
+  height: 10%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+  background-color: green; /* Green */
+  border: black;
+  color: white;
+  padding: 15px 110px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+.selectB{
+  background-color: green; /* Green */
+  border: black;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display: block;
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import { createItem, deleteItem, getItems, filterItems } from "./api.js";
 
+
 function drawTable(items) {
   const table = document.getElementById("main-table-body");
 
@@ -18,11 +19,12 @@ function drawTable(items) {
   }
 }
 
-export async function fetchAndDrawTable() {
+export async function fetchAndDrawTable() { 
   const items = await getItems();
-
   drawTable(items);
 }
+
+
 
 export async function handleDeleteItem(id) {
   await deleteItem(id);

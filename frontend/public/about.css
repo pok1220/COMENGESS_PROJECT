@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;400;600&display=swap');
+body{
+    font-family: 'Mitr', sans-serif;
+}
+
+.padded-cell {
+    padding: 15px;
+  }
+  
+
+
+#main-table > thead > tr > th{
+    font-weight: lighter;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#button{
+    cursor: pointer;
+    background-color: green; /* Green */
+    border: black;
+    color: white;
+    padding: 15px 110px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.back{
+    display: block;
+    /* margin-left: auto; */
+    width: 5%;
+    height: 10%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    cursor: pointer;
+}

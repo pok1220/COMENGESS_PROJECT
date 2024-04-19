@@ -1,3 +1,3 @@
 import mongoose from "mongoose";
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect("mongodb+srv://teratas:teratas@cluster0.ycogo6i.mongodb.net/Scoreboard_ESS");

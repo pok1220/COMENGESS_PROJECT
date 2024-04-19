@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1 id="balance" class="topright">Balance <b id="money">0</b></h1>
+
+    <section>
+        <header><h1 id="app-name">STORE</h1></header>
+    </section>
+
+
+    <table id="main-table">
+      <thead>
+      </thead>
+
+      <tbody id="main-table-body">
+          <tr>
+            <td> <img src="./picture/heart.jpg"   class="picture01"></td>
+            <td>Heart</td>
+            <td><input type="button" class="selectB" id="heart" value="Buy"  ></td>
+          </tr>
+          <tr>
+            <td> <img src="./picture/grass1.jpg"   class="picture01" onclick=""></td>
+            <td>Skin01</td>
+            <td><input type="button" class="selectB" id="Skin-01" value="Select" ></td>
+          </tr>
+          <tr>
+            <td> <img src="./picture/grass2.jpg"   class="picture01" onclick=""></td>
+            <td>Skin02</td>
+            <td><input type="button" class="selectB" id="Skin-02" value="Select" onclick="selectSkin(id)" ></td>
+          </tr>
+          <tr>
+            <td> <img src="./picture/grass3.jpg"    class="picture01" onclick=""></td>
+            <td>Skin03</td>
+            <td><input type="button" class="selectB" id="Skin-03" value="Select" onclick="selectSkin(id)" ></td>
+          </tr>
+
+      </tbody>
+
+
+    </table>
+  
+    <button id="changePage" class="back">Back</button>
+    <label for="" >CurrentSkin <b id="currentSkin">default</b></label>
+    <script type="module" src="scripts/store.js"></script>
+  </body>
+</html>
+
+
