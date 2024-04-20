@@ -1,7 +1,7 @@
 var coins = 0
 // import phaser from 'https://cdn.jsdelivr.net/npm/phaser@3.80.1/+esm'
 import * as apiControllor from "./api.js";
-import { hideable } from './main.js';
+import { hideable, reAc } from './main.js';
 // import 'https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js';
 // export default coin;
 
@@ -368,6 +368,7 @@ export async function snake(){
                     apiControllor.endGame(coins, score);
                     apiControllor.changeExtraHealthInGame(life);
                     coins = 0;
+                    reAc();
                 });
                 let returnButton = this.add.text(300, 350, 'Return', { fontFamily: 'Arial', fontSize: 20, color: '#ff0000' })
                 returnButton.setOrigin(0.5);
@@ -384,6 +385,7 @@ export async function snake(){
                     document.getElementById('changeAc').style.display = 'inline';
                     coins = 0;
                     apiControllor.changeExtraHealthInGame(life);
+                    reAc();
                 });
             }
             //restartButton.on('pointerover', () => restartButton.setStyle({ fill: '#ff1200' }))

@@ -50,15 +50,23 @@ import {snake} from "./snake.js"
 // import * as apiController from "./api.js"
 const checkPlayer = await apiController.getCurrentPlayer();
 var playerName = "Anonymous"
+var playerBalance = checkPlayer[0].balance;
+var playerHighScore = checkPlayer[0].score;
 const nameTag = document.getElementById('nameChange');
 if(checkPlayer[0] != null){
 
     playerName = checkPlayer[0].name;
+    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore}`;
 }
 
 
 nameTag.innerHTML = playerName
 document.getElementById('changeAc').addEventListener('click', ()=>{
+    playerName = window.prompt("Your Name")
+    if(playerName == '' || playerName == null) playerName = "Anonymous"
+    // alert(playerName)
+    console.log(playerName)
+    document.getElementById('nameChange').innerHTML = playerName
     reAc();
 });
 apiController.startGame(playerName)
@@ -74,13 +82,14 @@ StartButton.addEventListener("click", function(){
     // console.log(`${coin}`);
 });
 
-async function reAc(){
-    playerName = window.prompt("Your Name")
-    if(playerName == '' || playerName == null) playerName = "Anonymous"
-    // alert(playerName)
-    console.log(playerName)
-    document.getElementById('nameChange').innerHTML = playerName
-    apiController.startGame(playerName)
+export async function reAc(){
+
+    await apiController.startGame(playerName)
+    const player = await apiController.getCurrentPlayer();
+    var playerBalance = await player[0].balance;
+    var playerHighScore = await player[0].score;
+    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore}`;
+
     // console.log(await apiController.getCurrentPlayer())
 }
 // const aboutButton = document.getElementById("about-botton");
