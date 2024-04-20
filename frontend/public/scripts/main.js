@@ -50,13 +50,15 @@ import {snake} from "./snake.js"
 // import * as apiController from "./api.js"
 const checkPlayer = await apiController.getCurrentPlayer();
 var playerName = "Anonymous"
-var playerBalance = checkPlayer[0].balance;
-var playerHighScore = checkPlayer[0].score;
+var playerBalance = await checkPlayer[0].balance;
+var playerHighScore = await checkPlayer[0].score;
+var playerExtra = await checkPlayer[0].extraHealth;
+var playerCur = await checkPlayer[0].selectedSkin;
 const nameTag = document.getElementById('nameChange');
 if(checkPlayer[0] != null){
 
     playerName = checkPlayer[0].name;
-    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore}`;
+    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore} \nExtra Health : ${playerExtra} \nSkin : ${playerCur}`;
 }
 
 
@@ -88,7 +90,9 @@ export async function reAc(){
     const player = await apiController.getCurrentPlayer();
     var playerBalance = await player[0].balance;
     var playerHighScore = await player[0].score;
-    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore}`;
+    var playerExtra = await player[0].extraHealth;
+    var playerCur = await player[0].selectedSkin;
+    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore} \nExtra Health : ${playerExtra} \nSkin : ${playerCur}`;
 
     // console.log(await apiController.getCurrentPlayer())
 }

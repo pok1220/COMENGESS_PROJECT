@@ -5,7 +5,9 @@ document.getElementById('changePage').onclick = clickTochange1;
 const player = await apiController.getCurrentPlayer();
 document.getElementById('money').innerHTML = player[0].balance;
 const curS = document.getElementById('currentSkin')
+// const curEx = doucment.getElementById('curEx');
 curS.innerHTML = player[0].selectedSkin;
+// curEx.innerHTML = toString(player[0].extraHealth);
 document.getElementById('heart').onclick = addHeart;
 document.getElementById('Skin-01').onclick = ()=>{
   selectSkin('Skin-01')
@@ -20,6 +22,8 @@ async function afterFetch(){
   const player = await apiController.getCurrentPlayer();
   document.getElementById('money').innerHTML = player[0].balance;
   const curS = document.getElementById('currentSkin')
+  // const curEx = doucment.getElementById('curEx');
+  // curEx.innerHTML = player[0].extraHealth;
   curS.innerHTML = player[0].selectedSkin;
 }
 function clickTochange1()
