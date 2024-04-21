@@ -48,18 +48,21 @@ import {snake} from "./snake.js"
 //   });
 // });
 // import * as apiController from "./api.js"
+document.getElementById('playerData').innerText = `Name : Anonymous \nBalance : 0 \nHighest score : 0 \nExtra Health : 0 \nSkin : default`;
+
 const checkPlayer = await apiController.getCurrentPlayer();
 var playerName = "Anonymous"
-var playerBalance = await checkPlayer[0].balance;
-var playerHighScore = await checkPlayer[0].score;
-var playerExtra = await checkPlayer[0].extraHealth;
-var playerCur = await checkPlayer[0].selectedSkin;
 const nameTag = document.getElementById('nameChange');
 if(checkPlayer[0] != null){
-
+    var playerBalance = await checkPlayer[0].balance;
+    var playerHighScore = await checkPlayer[0].score;
+    var playerExtra = await checkPlayer[0].extraHealth;
+    var playerCur = await checkPlayer[0].selectedSkin;
     playerName = checkPlayer[0].name;
-    document.getElementById('playerData').innerText = `Name : ${playerName} \nBalance : ${playerBalance} \nHighest score : ${playerHighScore} \nExtra Health : ${playerExtra} \nSkin : ${playerCur}`;
+    document.getElementById('playerData').innerText = `Name : ${await playerName} \nBalance : ${await playerBalance} \nHighest score : ${await playerHighScore} \nExtra Health : ${await playerExtra} \nSkin : ${await playerCur}`;
 }
+await apiController.startGame(playerName)
+
 
 
 nameTag.innerHTML = playerName
@@ -71,7 +74,7 @@ document.getElementById('changeAc').addEventListener('click', ()=>{
     document.getElementById('nameChange').innerHTML = playerName
     reAc();
 });
-apiController.startGame(playerName)
+
 console.log(await apiController.getCurrentPlayer());
 var aboutalreadycreate = false;
 const StartButton = document.getElementById("Start-botton");

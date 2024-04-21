@@ -9,7 +9,18 @@ export async function snake(){
     document.getElementById('changeAc').style.display = 'none';
     const s = await apiControllor.getCurrentPlayer();
     var life = s[0].extraHealth;
-
+    var color = 0xff0000;
+    const playerColor = await s[0].selectedSkin;
+    if(playerColor == "Skin-01"){
+        color = 0xFF0080;
+    }
+    else if(playerColor == "Skin-02"){
+        color = 0x00FF80;
+    }
+    else if(playerColor == "Skin-03"){
+        color = 0x8000FF;
+    }
+    console.log(playerColor)
     let gridspace = 10;
     let gridX = 80;
     let gridY = 60;
@@ -82,7 +93,7 @@ export async function snake(){
             }, timer);
         }
         // Create graphics object for drawing
-        graphics = this.add.graphics({ fillStyle: { color: 0xff0000 } });
+        graphics = this.add.graphics({ fillStyle: { color: color } });
         graphicsfood = this.add.graphics({ fillStyle: { color: 0xff00ff } });
         graphicscoin = this.add.graphics({ fillStyle: { color: 0xffff00 } });
         graphicspoison = this.add.graphics({ fillStyle: { color: 0x00ff00 } });

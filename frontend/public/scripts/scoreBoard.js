@@ -1,7 +1,10 @@
-import { getScoreboard} from "./api.js";
+import { getScoreboard, clearScore, deleteItem} from "./api.js";
 
-
-function drawTable(items) {
+document.getElementById('clearScoreboard').addEventListener('click', async ()=>{
+  await clearScore();
+  document.getElementById("main-table-body").innerHTML = ""
+})
+async function drawTable(items) {
   const table = document.getElementById("main-table-body");
 
   // Clear all elements
@@ -13,18 +16,31 @@ function drawTable(items) {
     console.log(item)
     const row = table.insertRow();
     row.insertCell().innerText=i
-    row.insertCell().innerText = item.name;
-    row.insertCell().innerText = item.score;
+    row.insertCell().innerText = await item.name;
+    row.insertCell().innerText = await item.score;
     //console.log(item.time)
     i+=1
+    // const btn = document.createElement('button');
+    // btn.width = "70px"
+    // btn.height = "30px"
+    // btn.innerText = "Delete"
+    // // btn.id = item.name;
+    // btn.onclick = async () => {
+    //   // console.log(this.id)
+    //   await deleteItem(await item.name)
+    //   await fetchAndDrawTable();
+    //   // await fetchAndDrawTable()
+    // }
     const timeSplited=item.time.split(" ");
     //console.log(timeSplited)
     row.insertCell().innerText = timeSplited[0]+" "+timeSplited[1]+" "+timeSplited[2]+" "+timeSplited[3];
+    // row.insertCell().appendChild(btn)
   }
 }
 
 export async function fetchAndDrawTable() {
   const items = await getScoreboard();
+  // document.getElementById("main-table-body").innerHTML = ""
 
   drawTable(items);
 }
