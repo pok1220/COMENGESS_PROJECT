@@ -6,6 +6,7 @@ import { hideable, reAc } from './main.js';
 // export default coin;
 
 export async function snake(){
+    document.getElementById("Start-botton").style.display ="none";
     document.getElementById('changeAc').style.display = 'none';
     const s = await apiControllor.getCurrentPlayer();
     var life = s[0].extraHealth;
@@ -397,6 +398,7 @@ export async function snake(){
                     coins = 0;
                     apiControllor.changeExtraHealthInGame(life);
                     reAc();
+                    document.getElementById("Start-botton").style.display ="inline";
                 });
             }
             //restartButton.on('pointerover', () => restartButton.setStyle({ fill: '#ff1200' }))
