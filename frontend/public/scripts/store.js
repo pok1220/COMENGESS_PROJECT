@@ -33,13 +33,13 @@ function clickTochange1()
 // 
 async function addHeart() {
   const player = await apiController.getCurrentPlayer(); //Tien
-  apiController.changeExtraHealth("true")
   let current_balance=player[0].balance;
   let current_extra_heart=player[0].extraHealth;
   
-  if(current_balance>3){
+  if(current_balance>=3){
     current_extra_heart+=1
     current_balance-=3;
+    await apiController.changeExtraHealth("true")
     await apiController.changeBalance(current_balance);
     await afterFetch();
   }
@@ -70,7 +70,7 @@ async function selectSkin(id_skin) {
       await apiController.selectSkin(id_skin);
 
   }else{
-    if(current_balance>5){
+    if(current_balance>=5){
       // current_PlayerSkin_All.push(id_skin)
       current_balance-=5
       await apiController.addSkin(id_skin);
