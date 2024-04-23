@@ -1,6 +1,8 @@
 // import {getCurrentPlayer(),createItem()} from "./api.js";
 import * as apiController from "./api.js"
-
+document.getElementById('default').onclick = ()=>{
+  selectSkin('default')
+}
 document.getElementById('changePage').onclick = clickTochange1;
 const player = await apiController.getCurrentPlayer();
 document.getElementById('money').innerHTML = player[0].balance;
@@ -30,7 +32,7 @@ function clickTochange1()
 {
   location.href="index.html"
 }
-// 
+
 async function addHeart() {
   const player = await apiController.getCurrentPlayer(); //Tien
   let current_balance=player[0].balance;
@@ -78,6 +80,8 @@ async function selectSkin(id_skin) {
       await apiController.selectSkin(id_skin)
      }
   }
+
+  
   await afterFetch();
   // curS.innerHTML = player[0].selectedSkin;
 

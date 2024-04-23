@@ -1,0 +1,144 @@
+
+
+
+body h1{
+    font-size: 50px;
+}
+
+body {
+    background-color: skyblue;
+    
+}
+
+.container {
+    background-color: white;
+    
+ 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.color-guide {
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* Removed justify-content property */
+    
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.white { background-color: white; border: 2px solid black; }
+.yellow { background-color: yellow; }
+.purple { background-color: pink; }
+.red { background-color: rgb(53, 182, 53); } 
+
+
+#wasd {
+    font-size: x-large;
+}
+
+
+.centered-image {
+    display: block;     
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: 20px;  
+    width: 60%;        
+    max-width: 300px;
+}
+
+
+
+#main-table button {
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    background: white;
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #main-table button:hover {
+    background: rgb(255, 200, 105);
+    color: white;
+  }
+  
+
+  
+/* .menu-content button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    display: block;
+    transition: all 0.3s ease; 
+    margin-bottom: 10px;  
+    display: block; 
+} */
+/* From uiverse.io by @Ali-Tahmazi99 */
+button {
+    display: inline-block;
+    padding: 15px 30px;
+    /* width: 150px;
+    height: 50px; */
+    border-radius: 10px;
+    border: 1px solid #03045e;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
+   
+   button::before,
+   button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+   
+   button::before {
+    left: -10px;
+    background: #240046;
+   }
+   
+   button::after {
+    right: -10px;
+    background: #5a189a;
+   }
+   
+   button:hover::before,
+   button:hover::after {
+    width: 58%;
+   }
+   
+   button:hover span {
+    color: #e0aaff;
+    transition: 0.3s;
+   }
+   
+   button span {
+    color: #03045e;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }

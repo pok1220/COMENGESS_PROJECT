@@ -32,7 +32,7 @@ const typeSchema = new Schema({
   skinCollection : {
     type : Array,
     required : true,
-    default : []
+    default : ["default"]
   },
   selectedSkin : {
     type : String,
