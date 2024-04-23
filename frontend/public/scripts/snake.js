@@ -68,9 +68,9 @@ export async function snake(){
     let length = 16;   // <=== set length here
     let score = 0;
     let isgameover = false;
-    let minspeed = 1/2;   // change speed
-    let currentspeed = 1/2;
-    let Maxspeed = 1/2;  
+    let minspeed = 1/4;   // change speed
+    let currentspeed = 1/4;
+    let Maxspeed = 1/4;  
     let isinsnake = true;
     let revivetext;
     let inrevivepage;
@@ -260,7 +260,7 @@ export async function snake(){
                 graphicsfood.fillRectShape(food);
                 length += 1;
                 score += 1;
-                isscorechange = true;
+              
             }
             if (distancecoin < 0.01) {//check eat coin
                 isinsnake = true;
@@ -338,6 +338,18 @@ export async function snake(){
                 console.log(`Game over`);
                 isgameover = true;
                 inrevivepage = true;
+            }
+            if (player.x < 0){
+                player.x = 800 ;
+            }
+            else if (player.x >= 800){
+                player.x = 0;
+            }
+            else if ( player.y < 0) {
+                player.y = 600;
+            }
+            else if(player.y >= 600){
+                player.y = 0;
             }
             if(currentspeed < Maxspeed){
                 currentspeed = Math.pow(2, Math.floor((length-2)/speedthreshold))*minspeed;// set speed depend on lenght
