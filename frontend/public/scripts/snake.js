@@ -68,8 +68,8 @@ export async function snake(){
     let length = 16;   // <=== set length here
     let score = 0;
     let isgameover = false;
-    let minspeed = 1/16;   // change speed
-    let currentspeed = 1/16;
+    let minspeed = 1;   // change speed
+    let currentspeed = 1;
     let Maxspeed = 1;  
     let isinsnake = true;
     let revivetext;

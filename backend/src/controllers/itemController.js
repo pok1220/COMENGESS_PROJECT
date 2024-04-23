@@ -10,7 +10,6 @@ export const startGame = async (req, res) => {
     const Thailand = time.toLocaleString('en-US', {
         timeZone : "Thailand"
     })
-    let timeSplit=time.split()
   const checkPlayer = await scoreboard.find({isPlay : true});
 
   const player = await scoreboard.find({name : name})
